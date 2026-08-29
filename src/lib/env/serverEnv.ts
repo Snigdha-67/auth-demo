@@ -11,6 +11,10 @@ export const serverEnv = createEnv({
       .min(1, { error: "DATABASE_URL is required" }),
     NEXT_TELEMETRY_DISABLED: z.enum(["1", "0"]).optional(),
     CHECKPOINT_DISABLE: z.enum(["1", "0"]).optional(),
+    BETTER_AUTH_SECRET: z
+      .string()
+      .min(1, { error: "BETTER_AUTH_SECRET is required" }),
+    BETTER_AUTH_URL: z.url().min(1, { error: "BETTER_AUTH_URL is required" }),
   },
   experimental__runtimeEnv: process.env,
 });
