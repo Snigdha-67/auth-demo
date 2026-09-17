@@ -12,7 +12,7 @@ const PrivateLayout = async ({ children }: LayoutProps) => {
     return redirect("/signin");
   }
 
-  return <>{children}</>;
+  return <main className="grid h-dvh place-items-center">{children}</main>;
 };
 
 export default PrivateLayout;

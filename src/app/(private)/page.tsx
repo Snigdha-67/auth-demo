@@ -37,28 +37,26 @@ const page = async () => {
   const nameFallback = `${nameParts[0].charAt(0).toUpperCase()} ${nameParts[1] ? nameParts[1].charAt(0).toUpperCase() : ""}`;
 
   return (
-    <main className="grid h-dvh place-items-center">
-      <section className="grid place-items-center gap-8">
-        <Avatar className="size-64">
-          {image && <AvatarImage src={`/${image}`} />}
-          <AvatarFallback className="text-3xl">{nameFallback}</AvatarFallback>
-        </Avatar>
+    <section className="grid place-items-center gap-8">
+      <Avatar className="size-64">
+        {image && <AvatarImage src={`/${image}`} />}
+        <AvatarFallback className="text-3xl">{nameFallback}</AvatarFallback>
+      </Avatar>
 
-        <h1 className="text-6xl font-semibold capitalize">Welcome, {name}</h1>
+      <h1 className="text-6xl font-semibold capitalize">Welcome, {name}👋🏻</h1>
 
-        <p className="text-xl">{email}</p>
+      <p className="text-xl">{email}</p>
 
-        <div className="grid grid-cols-2 gap-4">
-          <Link
-            href={"/profile"}
-            className={buttonVariants({ size: "lg" })}>
-            <PenLineIcon /> Update Profile
-          </Link>
+      <div className="grid grid-cols-2 gap-4">
+        <Link
+          href={"/profile"}
+          className={buttonVariants({ size: "lg" })}>
+          <PenLineIcon /> Update Profile
+        </Link>
 
-          <LogOutButton />
-        </div>
-      </section>
-    </main>
+        <LogOutButton />
+      </div>
+    </section>
   );
 };
 

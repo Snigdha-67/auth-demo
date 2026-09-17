@@ -9,5 +9,9 @@ export const auth = betterAuth({
   baseURL: serverEnv.BETTER_AUTH_URL,
   secret: serverEnv.BETTER_AUTH_SECRET,
   plugins: [nextCookies()],
-  emailAndPassword: { enabled: true },
+  emailAndPassword: {
+    enabled: true,
+    autoSignIn: false,
+    requireEmailVerification: false,
+  },
 });
