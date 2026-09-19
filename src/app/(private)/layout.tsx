@@ -1,3 +1,4 @@
+import Header from "@/components/Layout/Header";
 import { auth } from "@/lib/auth";
 import { LayoutProps } from "@/lib/types";
 import { headers } from "next/headers";
@@ -12,7 +13,13 @@ const PrivateLayout = async ({ children }: LayoutProps) => {
     return redirect("/signin");
   }
 
-  return <main className="grid h-dvh place-items-center">{children}</main>;
+  return (
+    <>
+      <Header />
+
+      <main className="grid h-dvh place-items-center">{children}</main>
+    </>
+  );
 };
 
 export default PrivateLayout;

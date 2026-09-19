@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export const proxy = async (request: NextRequest) => {
   const sessionCookie = getSessionCookie(request);
 
-  console.log(request.nextUrl.pathname);
+  // console.log(request.nextUrl.pathname);
 
   const isPublicPath =
     request.nextUrl.pathname.startsWith("/signin") ||
